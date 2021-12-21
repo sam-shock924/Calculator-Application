@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Simple Calculator Application</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+    <h1>Calculator Application</h1>
+    <input type="text" id="calculatorDisplay" />
+    <div class="numButton">
+      <button id="numZero">0</button>
+      <button id="numOne">1</button>
+      <button id="numTwo">2</button>
+      <button id="numThree">3</button>
+      <button id="numFour">4</button>
+      <button id="numFive">5</button>
+      <button id="numSix">6</button>
+      <button id="numSeven">7</button>
+      <button id="numEight">8</button>
+      <button id="numNine">9</button>
+    </div>
+    <div class="operatorButton">
+      <button id="decimalButton">.</button>
+      <button id="plusButton">&plus;</button>
+      <button id="minusButton">&minus;</button>
+      <button id="divideButton">&divide;</button>
+      <button id="timesButton">&times;</button>
+      <button id="equalButton">=</button>
+      <button id="clearButton">C</button>
+    </div>
     <script src="calc.js"></script>
-</body>
+  </body>
 </html>
+
+<!-- User process:
+    user clicks on digit button
+    digit appears on the screen
+    user clicks on math function button (+,-,*,/)
+    (digit doesn't disappear on the screen)
+    user clicks on another digit button
+    new digit appears on the screen
+    user clicks on equal sign button
+    answer to equation appears on the screen
+    user clicks "C" button to clear answer -->
