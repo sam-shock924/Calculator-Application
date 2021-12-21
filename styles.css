@@ -1,3 +1,18 @@
+/*
+colors:
+background: #bcbcad
+screen border: #666e72
+screen color: #37e550
+screen digit color: black
+button color: #933e59
+clear button color: #8a8584
+*/
+
 body {
   font-family: "Press Start 2P", cursive;
+}
+
+button {
+  font-family: inherit;
+  border-radius: 5px;
 }
