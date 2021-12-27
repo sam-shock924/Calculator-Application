@@ -1,11 +1,11 @@
-const calcDisplay = document.getElementById('calculatorDisplay');
-const numberButtons = document.querySelector('.numButton');
+const calcDisplay = document.querySelector('#calculatorDisplay');
+const numberButtons = document.querySelector('.numButtons');
 const operatorButtons = document.querySelector('.operatorButton');
-
-numberButtons.addEventListener('click', () => {
-    console.log('number button pressed');
-});
 
 operatorButtons.addEventListener('click', () => {
     console.log('operator button pressed');
+});
+
+numberButtons.addEventListener('click', () => {
+    console.log(numberButtons.innerText);
 });
