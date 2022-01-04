@@ -4,7 +4,7 @@ const numberButtons = document.querySelectorAll('.numButton');
 
 operatorButtons.forEach(operatorButtons => {
     operatorButtons.addEventListener('click', () => {
-        console.log(operatorButtons.innerText);
+        calcDisplay.value = operatorButtons.innerText;
 })
 });
 
@@ -13,4 +13,3 @@ numberButtons.forEach(numberButtons => {
         calcDisplay.value = numberButtons.innerText;
 })
 });
-
