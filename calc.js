@@ -55,7 +55,7 @@ document.getElementById('allClearButton').addEventListener('click', () => {
 })
 
 //operator functions
-// function solveEquation(){
+function solveEquation(result){
     equalButton.addEventListener('click', () => {
         switch(operator) {
             case "+": 
@@ -70,10 +70,16 @@ document.getElementById('allClearButton').addEventListener('click', () => {
             case "/": 
                 calcDisplay.value = parseFloat(firstOperand) / parseFloat(secondOperand);
                 break;
-        }
+        } let result = calcDisplay.value;
+        console.log('the result is: ' + result);
+    if (result) {
+            firstOperand = result;
+            secondOperand = '';
+            operator = '';
+            calcDisplay.value = firstOperand; 
+            // debugger;
+    }
     })    
-// }
+}
 
-// solveEquation();
-
-//continuous functionality
+solveEquation();
