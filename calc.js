@@ -7,7 +7,6 @@ const operatorButtons = document.querySelectorAll('.operatorButton');
 const numberButtons = document.querySelectorAll('.numButton');
 const equalButton = document.getElementById('equalButton');
 
-
 //operator click functions 
 operatorButtons.forEach(operatorButtons => {
     operatorButtons.addEventListener('click', e => {
@@ -24,7 +23,7 @@ numberButtons.forEach(numberButtons => {
         if (firstOperand && operator) {
             secondOperand += numberSelection;
             calcDisplay.value = secondOperand;
-        }
+        } 
         else {
             firstOperand += numberSelection;
             calcDisplay.value = firstOperand;
@@ -33,8 +32,30 @@ numberButtons.forEach(numberButtons => {
 })
 });
 
+//clear button
+document.getElementById('clearButton').addEventListener('click', () => {
+    if (firstOperand && operator) {
+        secondOperand = '';
+        calcDisplay.value = '';
+    } else {
+        firstOperand = '';
+        operator= '';
+        calcDisplay.value = '';
+    }
+    // debugger;
+})
+
+//all clear button
+document.getElementById('allClearButton').addEventListener('click', () => {
+    firstOperand= '';
+    secondOperand = '';
+    operator = '';
+    calcDisplay.value = '';
+    // debugger;
+})
+
 //operator functions
-function solveEquation(){
+// function solveEquation(){
     equalButton.addEventListener('click', () => {
         switch(operator) {
             case "+": 
@@ -50,15 +71,9 @@ function solveEquation(){
                 calcDisplay.value = parseFloat(firstOperand) / parseFloat(secondOperand);
                 break;
         }
-        if (firstOperand && secondOperand && operator) {
-            const result = solveEquation();
-            firstOperand = result;
-            secondOperand = '';
-            operator = '';
-            debugger;
-        }
     })    
-}
+// }
 
-solveEquation();
+// solveEquation();
+
 //continuous functionality
