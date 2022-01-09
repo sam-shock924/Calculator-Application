@@ -7,6 +7,8 @@ const operatorButtons = document.querySelectorAll('.operatorButton');
 const numberButtons = document.querySelectorAll('.numButton');
 const equalButton = document.getElementById('equalButton');
 
+
+//operator click functions 
 operatorButtons.forEach(operatorButtons => {
     operatorButtons.addEventListener('click', e => {
         operator = e.target.textContent;
@@ -15,6 +17,7 @@ operatorButtons.forEach(operatorButtons => {
     });
 });
 
+//assign operands
 numberButtons.forEach(numberButtons => {
     numberButtons.addEventListener('click', e => {
         let numberSelection = e.target.value;
@@ -30,20 +33,32 @@ numberButtons.forEach(numberButtons => {
 })
 });
 
-equalButton.addEventListener('click', () => {
-    switch(operator) {
-        case "+": 
-            calcDisplay.value = parseFloat(firstOperand) + parseFloat(secondOperand);
-            break;
-        case "-": 
-            calcDisplay.value = parseFloat(firstOperand) - parseFloat(secondOperand);
-            break;
-        case "*": 
-            calcDisplay.value = parseFloat(firstOperand) * parseFloat(secondOperand);
-            break;
-        case "/": 
-            calcDisplay.value = parseFloat(firstOperand) / parseFloat(secondOperand);
-            break;
-    }
-})
+//operator functions
+function solveEquation(){
+    equalButton.addEventListener('click', () => {
+        switch(operator) {
+            case "+": 
+                calcDisplay.value = parseFloat(firstOperand) + parseFloat(secondOperand);
+                break;
+            case "-": 
+                calcDisplay.value = parseFloat(firstOperand) - parseFloat(secondOperand);
+                break;
+            case "*": 
+                calcDisplay.value = parseFloat(firstOperand) * parseFloat(secondOperand);
+                break;
+            case "/": 
+                calcDisplay.value = parseFloat(firstOperand) / parseFloat(secondOperand);
+                break;
+        }
+        if (firstOperand && secondOperand && operator) {
+            const result = solveEquation();
+            firstOperand = result;
+            secondOperand = '';
+            operator = '';
+            debugger;
+        }
+    })    
+}
 
+solveEquation();
+//continuous functionality
