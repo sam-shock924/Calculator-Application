@@ -1,40 +1,49 @@
-let firstOperand = null;
-let secondOperand = null;
-let operation = null;
-let firstOperandChosen = false;
-let secondOperandChosen = false;
+let firstOperand = '';
+let secondOperand = '';
+let operator = '';
 
 const calcDisplay = document.querySelector('#calculatorDisplay');
 const operatorButtons = document.querySelectorAll('.operatorButton');
 const numberButtons = document.querySelectorAll('.numButton');
-const equalButton = document.querySelector('.equalButton');
-// let numberValue = calcDisplay.value;
+const equalButton = document.getElementById('equalButton');
 
 operatorButtons.forEach(operatorButtons => {
-    operatorButtons.addEventListener('click', () => {
-        // console.log(operatorButtons.innerText);
-        firstOperandChosen = true;
-})
+    operatorButtons.addEventListener('click', e => {
+        operator = e.target.textContent;
+        console.log('operator: ' , operator);
+        calcDisplay.value= '';
+    });
 });
 
 numberButtons.forEach(numberButtons => {
-    numberButtons.addEventListener('click', () => {
-        if (firstOperandChosen == true) {
-            firstOperand = calcDisplay.value;
-            calcDisplay.value = '';
-            calcDisplay.value += numberButtons.textContent;
-            firstOperandChosen = false;
-            // console.log(firstOperand);
+    numberButtons.addEventListener('click', e => {
+        let numberSelection = e.target.value;
+        if (firstOperand && operator) {
+            secondOperand += numberSelection;
+            calcDisplay.value = secondOperand;
         }
         else {
-            calcDisplay.value += numberButtons.textContent;
-            secondOperand = calcDisplay.value;
+            firstOperand += numberSelection;
+            calcDisplay.value = firstOperand;
         }
-        console.log(firstOperand, secondOperand);
+        console.log('firstOperand: ' , firstOperand, 'secondOperand: ' , secondOperand);
 })
 });
 
 equalButton.addEventListener('click', () => {
-    switch
+    switch(operator) {
+        case "+": 
+            calcDisplay.value = parseFloat(firstOperand) + parseFloat(secondOperand);
+            break;
+        case "-": 
+            calcDisplay.value = parseFloat(firstOperand) - parseFloat(secondOperand);
+            break;
+        case "*": 
+            calcDisplay.value = parseFloat(firstOperand) * parseFloat(secondOperand);
+            break;
+        case "/": 
+            calcDisplay.value = parseFloat(firstOperand) / parseFloat(secondOperand);
+            break;
+    }
 })
 
