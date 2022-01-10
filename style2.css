@@ -1,0 +1,137 @@
+/* .container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-areas:
+    "plus minus multiply divide"
+    "seven eight nine equal"
+    "four five six equal"
+    "one two three equal"
+    "z dec clear allClear";
+} */
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(to left top, rgb(100, 100, 100), rgb(238, 70, 70))
+    fixed;
+}
+
+.container {
+  width: 22rem;
+  padding: 1rem 1rem;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 20px;
+  box-shadow: 0 0 1em black;
+  background: gray;
+}
+
+#calculatorDisplay {
+  padding: 0.3rem;
+  border: 1px solid;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 1em black;
+}
+
+/* .buttonContainer > .numberButtons > .operatorButtons > .functionButtons { */
+.buttonContainer .numberButtons .operatorButtons .functionButtons {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-areas:
+    "plus minus multiply divide"
+    "seven eight nine equal"
+    "four five six equal"
+    "one two three equal"
+    "zero decimal clear allClear";
+}
+
+#numOne {
+  grid-area: one;
+}
+
+#numTwo {
+  grid-area: two;
+}
+
+#numThree {
+  grid-area: three;
+}
+
+#numFour {
+  grid-area: four;
+}
+
+#numFive {
+  grid-area: five;
+}
+
+#numSix {
+  grid-area: six;
+}
+
+#numSeven {
+  grid-area: seven;
+}
+
+#numEight {
+  grid-area: eight;
+}
+
+#numNine {
+  grid-area: nine;
+}
+
+#numZero {
+  grid-area: zero;
+}
+
+#decimalButton {
+  grid-area: decimal;
+}
+
+#clearButton {
+  grid-area: clear;
+}
+
+#allClearButton {
+  grid-area: allClear;
+}
+
+#plusButton {
+  grid-area: plus;
+}
+
+#minusButton {
+  grid-area: minus;
+}
+
+#timesButton {
+  grid-area: multiply;
+}
+
+#divideButton {
+  grid-area: divide;
+}
+
+#equalButton {
+  grid-area: equal;
+  background-color: orange;
+}
+
+#equalButton:hover {
+  background-color: orangered;
+}
+
+.functionButton,
+.numButton,
+.operatorButton {
+  background: lightgray;
+}
+
+.functionButton:hover,
+.numButton:hover,
+.operatorButton:hover {
+  background: gray;
+}

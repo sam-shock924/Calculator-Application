@@ -55,7 +55,7 @@ document.getElementById('allClearButton').addEventListener('click', () => {
 })
 
 //operator functions
-function solveEquation(result){
+function solveEquation(){
     equalButton.addEventListener('click', () => {
         switch(operator) {
             case "+": 
