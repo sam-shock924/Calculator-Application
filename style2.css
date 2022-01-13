@@ -1,44 +1,60 @@
-/* .container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-template-areas:
-    "plus minus multiply divide"
-    "seven eight nine equal"
-    "four five six equal"
-    "one two three equal"
-    "z dec clear allClear";
-} */
-
 body {
   font-family: "Josefin Sans", sans-serif;
-  background: linear-gradient(to left top, rgb(100, 100, 100), rgb(238, 70, 70))
-    fixed;
+  background: linear-gradient(to left top, rgb(100, 100, 100), orangered) fixed;
+}
+
+h1 {
+  font-size: 3em;
 }
 
 .container {
-  width: 22rem;
-  padding: 1rem 1rem;
-  text-align: center;
-  border: 2px solid;
-  border-radius: 20px;
+  background-color: gray;
+  border: 2px solid black;
   box-shadow: 0 0 1em black;
-  background: gray;
+  border-radius: 20px;
+  padding: 5px;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 30%;
+  right: 30%;
+  margin: auto;
+  text-align: center;
+  min-width: 350px;
+  max-width: 450px;
 }
 
 #calculatorDisplay {
-  padding: 0.3rem;
-  border: 1px solid;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 1em black;
+  font-family: inherit;
+  display: inline-block;
+  margin-bottom: 25px;
+  font-size: 2em;
+  text-align: right;
+  background-color: white;
+  color: black;
+  padding: 8px;
+  border: 10px solid;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 35px 0 white;
 }
 
-/* .buttonContainer > .numberButtons > .operatorButtons > .functionButtons { */
-.buttonContainer .numberButtons .operatorButtons .functionButtons {
+button {
+  font-size: 1em;
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buttonContainer {
+  margin-top: 1em;
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 10px;
   grid-template-areas:
     "plus minus multiply divide"
     "seven eight nine equal"

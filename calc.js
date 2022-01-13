@@ -4,7 +4,7 @@ let operator = '';
 
 const calcDisplay = document.querySelector('#calculatorDisplay');
 const operatorButtons = document.querySelectorAll('.operatorButton');
-const numberButtons = document.querySelectorAll('.numberButtons');
+const numberButtons = document.querySelectorAll('.numButton');
 const equalButton = document.getElementById('equalButton');
 
 //operator click functions 
