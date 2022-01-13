@@ -4,13 +4,13 @@ let operator = '';
 
 const calcDisplay = document.querySelector('#calculatorDisplay');
 const operatorButtons = document.querySelectorAll('.operatorButton');
-const numberButtons = document.querySelectorAll('.numButton');
+const numberButtons = document.querySelectorAll('.numberButtons');
 const equalButton = document.getElementById('equalButton');
 
 //operator click functions 
 operatorButtons.forEach(operatorButtons => {
     operatorButtons.addEventListener('click', e => {
-        operator = e.target.textContent;
+        operator = e.target.value;
         console.log('operator: ' , operator);
         calcDisplay.value= '';
     });
